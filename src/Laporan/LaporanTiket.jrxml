@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="42603168-58fd-45fd-a994-2d8efe3d399f">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="206"/>
+	<property name="ireport.y" value="16"/>
+	<parameter name="tujuan1" class="java.lang.String"/>
+	<parameter name="tanggal" class="java.lang.String"/>
+	<parameter name="penerbangan" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     *,
+     tb_transaksi.`no_tiket` AS tb_transaksi_no_tiket,
+     tb_transaksi.`id_pelanggan` AS tb_transaksi_id_pelanggan,
+     tb_transaksi.`nama_pelanggan` AS tb_transaksi_nama_pelanggan,
+     tb_transaksi.`maskapai` AS tb_transaksi_maskapai,
+     tb_transaksi.`penerbangan` AS tb_transaksi_penerbangan,
+     tb_transaksi.`tujuan1` AS tb_transaksi_tujuan1,
+     tb_transaksi.`tanggal` AS tb_transaksi_tanggal,
+     tb_transaksi.`jam` AS tb_transaksi_jam,
+     tb_transaksi.`kelas` AS tb_transaksi_kelas,
+     tb_transaksi.`biaya` AS tb_transaksi_biaya
+FROM
+     `tb_transaksi` tb_transaksi WHERE tanggal= $P{tanggal} AND penerbangan = $P{penerbangan} AND tujuan1 = $P{tujuan1}]]>
+	</queryString>
+	<field name="no_tiket" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_pelanggan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_pelanggan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="maskapai" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="penerbangan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tujuan1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tanggal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jam" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kelas" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="biaya" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tb_transaksi_no_tiket" class="java.lang.Integer"/>
+	<field name="tb_transaksi_id_pelanggan" class="java.lang.String"/>
+	<field name="tb_transaksi_nama_pelanggan" class="java.lang.String"/>
+	<field name="tb_transaksi_maskapai" class="java.lang.String"/>
+	<field name="tb_transaksi_penerbangan" class="java.lang.String"/>
+	<field name="tb_transaksi_tujuan1" class="java.lang.String"/>
+	<field name="tb_transaksi_tanggal" class="java.lang.String"/>
+	<field name="tb_transaksi_jam" class="java.lang.String"/>
+	<field name="tb_transaksi_kelas" class="java.lang.String"/>
+	<field name="tb_transaksi_biaya" class="java.lang.String"/>
+	<group name="no_tiket">
+		<groupExpression><![CDATA[$F{no_tiket}]]></groupExpression>
+	</group>
+	<group name="id_pelanggan">
+		<groupExpression><![CDATA[$F{id_pelanggan}]]></groupExpression>
+	</group>
+	<group name="nama_pelanggan">
+		<groupExpression><![CDATA[$F{nama_pelanggan}]]></groupExpression>
+	</group>
+	<group name="maskapai">
+		<groupExpression><![CDATA[$F{maskapai}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="f1ea1b9b-4fc6-43df-b1c4-ed2400cdce2e" x="0" y="12" width="555" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN PENERBANGAN]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="14" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="7c91914e-9b00-43da-93f3-9afbf6e7c459" x="10" y="1" width="14" height="13"/>
+				<textElement/>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7c91914e-9b00-43da-93f3-9afbf6e7c459" x="34" y="1" width="76" height="13"/>
+				<textElement/>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7c91914e-9b00-43da-93f3-9afbf6e7c459" x="110" y="1" width="74" height="13"/>
+				<textElement/>
+				<text><![CDATA[Maskapai]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7c91914e-9b00-43da-93f3-9afbf6e7c459" x="184" y="1" width="127" height="13"/>
+				<textElement/>
+				<text><![CDATA[Penerbangan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7c91914e-9b00-43da-93f3-9afbf6e7c459" x="315" y="1" width="66" height="13"/>
+				<textElement/>
+				<text><![CDATA[Tujuan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7c91914e-9b00-43da-93f3-9afbf6e7c459" x="381" y="1" width="70" height="13"/>
+				<textElement/>
+				<text><![CDATA[Tanggal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7c91914e-9b00-43da-93f3-9afbf6e7c459" x="451" y="1" width="41" height="13"/>
+				<textElement/>
+				<text><![CDATA[Jam]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7c91914e-9b00-43da-93f3-9afbf6e7c459" x="503" y="1" width="41" height="13"/>
+				<textElement/>
+				<text><![CDATA[Kelas]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="4" splitType="Stretch">
+			<line>
+				<reportElement uuid="b23c8ce8-139f-48db-9d93-96315583c283" x="0" y="3" width="555" height="1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<textField>
+				<reportElement uuid="49aa2aab-48a8-4950-8511-147ac148dc3f" x="34" y="1" width="76" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nama_pelanggan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="49aa2aab-48a8-4950-8511-147ac148dc3f" x="110" y="0" width="74" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{maskapai}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="49aa2aab-48a8-4950-8511-147ac148dc3f" x="184" y="0" width="127" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{penerbangan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="49aa2aab-48a8-4950-8511-147ac148dc3f" x="451" y="0" width="52" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{jam}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="49aa2aab-48a8-4950-8511-147ac148dc3f" x="315" y="0" width="60" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tujuan1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="49aa2aab-48a8-4950-8511-147ac148dc3f" x="381" y="0" width="70" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tanggal}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="ceeb3499-11d9-451e-9174-5881b4abb051" x="0" y="13" width="555" height="1"/>
+			</line>
+			<textField>
+				<reportElement uuid="fffcbd86-6008-4b2a-8779-499f3ff3b068" x="10" y="1" width="17" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="49aa2aab-48a8-4950-8511-147ac148dc3f" x="503" y="1" width="52" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{kelas}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
